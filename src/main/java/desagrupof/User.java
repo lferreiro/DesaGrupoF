@@ -1,6 +1,7 @@
 package desagrupof;
 
 import desagrupof.validators.ValidPassword;
+import org.springframework.stereotype.Component;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -8,7 +9,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.math.BigInteger;
 
+@Component
 public class User {
     @NotBlank
     @Size(min =3, max=30)
@@ -32,11 +35,14 @@ public class User {
     int cryptoAdress;
     @NotBlank
     @Size(min=22, max=22)
-    int cvuMercadoPago;
+    BigInteger cvuMercadoPago;
 
 
 
-    public User(String name, String lastname, String email, String password, String adress, int cryptoAdress, int cvuMercadoPago){
+    public User(){
+
+    };
+    public User(String name, String lastname, String email, String password, String adress, int cryptoAdress, BigInteger cvuMercadoPago){
         this.name = name;
         this.lastname = lastname;
         this.email = email;
@@ -46,6 +52,10 @@ public class User {
         this.ammountOfTransactions = 0;
         this.cryptoAdress = cryptoAdress;
         this.cvuMercadoPago = cvuMercadoPago;
+    }
+
+    public String createUser(){
+        return "Creado";
     }
 
 }

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "desagrupof")
+
 public class ExchangeSB implements CommandLineRunner {
 
     private static Logger LOG= LoggerFactory.getLogger(ExchangeSB.class);
